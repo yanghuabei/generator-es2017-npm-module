@@ -1,17 +1,17 @@
 # generator-es2017-npm-module
 
-![Build Status](https://img.shields.io/travis/yanghuabei/generator-es6-npm-module.svg)
-![Coverage](https://img.shields.io/coveralls/yanghuabei/generator-es6-npm-module.svg)
+![Build Status](https://img.shields.io/travis/yanghuabei/generator-es2017-npm-module.svg)
+![Coverage](https://img.shields.io/coveralls/yanghuabei/generator-es2017-npm-module.svg)
 
 ![Downloads](https://img.shields.io/npm/dm/generator-es2017-npm-module.svg)
 ![Downloads](https://img.shields.io/npm/dt/generator-es2017-npm-module.svg)
 ![npm version](https://img.shields.io/npm/v/generator-es2017-npm-module.svg)
 ![License](https://img.shields.io/npm/l/generator-es2017-npm-module.svg)
 
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-![dependencies](https://img.shields.io/david/yanghuabei/generator-es6-npm-module.svg)
-![dev dependencies](https://img.shields.io/david/dev/yanghuabei/generator-es6-npm-module.svg)
+![dependencies](https://img.shields.io/david/yanghuabei/generator-es2017-npm-module.svg)
+![dev dependencies](https://img.shields.io/david/dev/yanghuabei/generator-es2017-npm-module.svg)
+
+**Forked from [Eugene Obrezkov](https://github.com/ghaiklor).**
 
 This generator creates empty npm module with ES2017 support and integrated Travis and Coveralls services.
 
