@@ -1,32 +1,34 @@
-# generator-es6-npm-module
+# generator-es2017-npm-module
 
-![Build Status](https://img.shields.io/travis/ghaiklor/generator-es6-npm-module.svg)
-![Coverage](https://img.shields.io/coveralls/ghaiklor/generator-es6-npm-module.svg)
+![Build Status](https://img.shields.io/travis/yanghuabei/generator-es2017-npm-module.svg)
+![Coverage](https://img.shields.io/coveralls/yanghuabei/generator-es2017-npm-module.svg)
 
-![Downloads](https://img.shields.io/npm/dm/generator-es6-npm-module.svg)
-![Downloads](https://img.shields.io/npm/dt/generator-es6-npm-module.svg)
-![npm version](https://img.shields.io/npm/v/generator-es6-npm-module.svg)
-![License](https://img.shields.io/npm/l/generator-es6-npm-module.svg)
+![Downloads](https://img.shields.io/npm/dm/generator-es2017-npm-module.svg)
+![Downloads](https://img.shields.io/npm/dt/generator-es2017-npm-module.svg)
+![npm version](https://img.shields.io/npm/v/generator-es2017-npm-module.svg)
+![License](https://img.shields.io/npm/l/generator-es2017-npm-module.svg)
 
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-![dependencies](https://img.shields.io/david/ghaiklor/generator-es6-npm-module.svg)
-![dev dependencies](https://img.shields.io/david/dev/ghaiklor/generator-es6-npm-module.svg)
+![dependencies](https://img.shields.io/david/yanghuabei/generator-es2017-npm-module.svg)
+![dev dependencies](https://img.shields.io/david/dev/yanghuabei/generator-es2017-npm-module.svg)
 
-This generator creates empty npm module with ES6 support and integrated Travis and Coveralls services.
+**Forked from [Eugene Obrezkov](https://github.com/ghaiklor/generator-es6-npm-module).**
+
+This generator creates empty npm module with es2017 support and integrated Travis and Coveralls services.
 
 ## Getting Started
 
 ```bash
-npm install -g yo generator-es6-npm-module
+npm install -g yo generator-es2017-npm-module
 mkdir my-project && cd my-project
-yo es6-npm-module
+yo es2017-npm-module
 ```
 
 Or you can create folder with your project and just copy\paste this code to terminal (you should be located under your project folder)
 
 ```bash
-npm install -g yo generator-es6-npm-module && yo es6-npm-module
+npm install -g yo generator-es2017-npm-module && yo es2017-npm-module
 ```
 
 ## Project structure
