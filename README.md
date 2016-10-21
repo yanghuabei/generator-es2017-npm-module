@@ -53,6 +53,22 @@ When project is generated you will get project with that structure:
   |-- README.md
 ```
 
+## Notes
+
+### How to use coveralls service with travis ci?
+
+Active coveralls service for your repository. Then add following code to `.travis.yml`.
+
+```
+script:
+  - npm test
+  - npm run compile
+after_success:
+  - npm run coveralls
+```
+
+I tried to run `npm run coveralls` locally, and got `422` error. It might be a bug of coveralls. So if you want light on coverage icon, use coveralls service with travis ci.
+
 ## License
 
 The MIT License (MIT)
