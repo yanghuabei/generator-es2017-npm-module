@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "babel-cli": "*",
-    "babel-preset-es2017": "*",
+    "babel-preset-es2017": "1.4.0",
     "coveralls": "*",
     "chai": "*",
     "isparta": "*",
