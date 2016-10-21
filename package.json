@@ -1,6 +1,5 @@
 {
     "name": "generator-es2017-npm-module",
-    "version": "1.0.5",
     "description": "Yeoman generator for starting es2017 npm module with Mocha, Istanbul, Travis, Coveralls",
     "license": "MIT",
     "main": "generators/app/index.js",
