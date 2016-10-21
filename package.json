@@ -14,7 +14,7 @@
         "url": "https://github.com/yanghuabei"
     },
     "contributors": [
-	{
+        {
             "name": "Eugene Obrezkov",
             "email": "ghaiklor@gmail.com",
             "url": "https://github.com/ghaiklor"
@@ -37,7 +37,7 @@
         "npm",
         "module",
         "es2017",
-	"es6"
+        "es6"
     ],
     "dependencies": {
         "yeoman-generator": "0.22.5",
@@ -48,7 +48,7 @@
         "cz-conventional-changelog": "1.1.5",
         "istanbul": "0.4.2",
         "mocha": "2.4.5",
-        "semantic-release": "4.3.5",
+        "semantic-release": "^4.3.5",
         "yeoman-assert": "2.1.1",
         "yeoman-test": "1.1.0"
     },

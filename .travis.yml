@@ -4,11 +4,13 @@ cache:
   directories:
     - node_modules
 notifications:
-  email: true
+  email: false
 node_js:
   - stable
   - 5
   - 4
+before_install:
+  - npm i -g npm@^2.0.0
 before_script:
   - npm prune
 after_success:
@@ -19,4 +21,4 @@ after_success:
   - npm run semantic-release
 branches:
   except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
+    - /^v\d+\.\d+\.\d+$/
