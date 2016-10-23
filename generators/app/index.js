@@ -99,4 +99,9 @@ module.exports = class AppGenerator extends Base {
     install() {
         this.npmInstall();
     }
+
+    end() {
+        this.log('Runing git init');
+        this.spawnCommandSync('git', ['init', '--quiet']);
+    }
 };

@@ -1,6 +1,6 @@
 {
     "name": "generator-es2017-npm-module",
-    "description": "Yeoman generator for starting es2017 npm module with Mocha, Istanbul, Travis, Coveralls",
+    "description": "Yeoman generator for starting es2017 npm module with Mocha, Isparta, Travis, Coveralls",
     "license": "MIT",
     "main": "generators/app/index.js",
     "repository": {
@@ -44,7 +44,7 @@
     },
     "devDependencies": {
         "coveralls": "2.11.6",
-        "cz-conventional-changelog": "1.1.5",
+        "cz-conventional-changelog": "^1.2.0",
         "istanbul": "0.4.2",
         "mocha": "2.4.5",
         "semantic-release": "^4.3.5",
