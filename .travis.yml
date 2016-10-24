@@ -12,7 +12,6 @@ node_js:
 before_script:
   - npm prune
 script:
-  - npm ls
   - npm test
   - npm run compile
 after_success:
