@@ -29,7 +29,7 @@
         "semantic-release": "semantic-release pre && npm publish && semantic-release post",
         "test": "babel-node ./node_modules/.bin/isparta cover _mocha",
         "prepublish": "npm run compile",
-        "compile": "cp -R src generators && babel src/app/index.js --out-file generators/app/index.js"
+        "compile": "rm -rf generators && cp -R src generators && babel src/app/index.js --out-file generators/app/index.js"
     },
     "keywords": [
         "yeoman-generator",
