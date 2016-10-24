@@ -42,8 +42,7 @@
     ],
     "dependencies": {
         "yeoman-generator": "0.24.x",
-        "yosay": "1.x",
-        "license-generator": "*"
+        "yosay": "1.x"
     },
     "devDependencies": {
         "babel-cli": "*",
