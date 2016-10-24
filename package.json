@@ -56,8 +56,8 @@
         "cz-conventional-changelog": "^1.2.0",
         "mocha": "3.x",
         "semantic-release": "^4.3.5",
-        "yeoman-assert": "*",
-        "yeoman-test": "*"
+        "yeoman-assert": "2.x",
+        "yeoman-test": "1.5.x"
     },
     "config": {
         "commitizen": {

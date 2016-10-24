@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -7,10 +7,6 @@ var _https = require('https');
 var _https2 = _interopRequireDefault(_https);
 
 var _yeomanGenerator = require('yeoman-generator');
-
-var _path = require('path');
-
-var _path2 = _interopRequireDefault(_path);
 
 var _yosay = require('yosay');
 
@@ -23,8 +19,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// import Promise from 'prmose';
-
 
 var QUESTIONS = [{
     type: 'input',
@@ -43,23 +37,24 @@ var QUESTIONS = [{
     name: 'module:author:fullName',
     message: 'Your full name'
 }, {
-    type: 'list',
-    name: 'module:license',
-    message: 'Choose a license',
-    default: 'MIT',
-    choices: ['Apache-2.0', 'Artistic-2.0', 'BSD-2-Clause', 'BSD-3-Clause', 'EPL-1.0', 'GPL-2.0', 'GPL-3.0', 'ISC', 'LGPL-2.1', 'LGPL-3.0', 'MIT', 'MPL-2.0', 'Unlicense']
+    'type': 'list',
+    'name': 'module:license',
+    'message': 'Choose a license',
+    'default': 'MIT',
+    'choices': ['Apache-2.0', 'Artistic-2.0', 'BSD-2-Clause', 'BSD-3-Clause', 'EPL-1.0', 'GPL-2.0', 'GPL-3.0', 'ISC', 'LGPL-2.1', 'LGPL-3.0', 'MIT', 'MPL-2.0', 'Unlicense']
 }];
 
 var LICENSE_TEMPLATE_URL = 'https://raw.githubusercontent.com/github/choosealicense.com/gh-pages/_licenses/';
 
 /**
  * Fetch license text from choosealicense.com
- * @param {String} license License ID
+ *
+ * @param {string} license License ID
  * @param {Function} cb Callback function with license content as argument
  */
 function fetchLicense(license, cb) {
-    var licenseTplURL = '' + LICENSE_TEMPLATE_URL + license.toLowerCase() + '.txt';
-    _https2.default.get(licenseTplURL, function (res) {
+    var licenseURL = '' + LICENSE_TEMPLATE_URL + license.toLowerCase() + '.txt';
+    _https2.default.get(licenseURL, function (res) {
         var tpl = '';
         res.on('data', function (chunk) {
             return tpl += chunk;
@@ -68,25 +63,6 @@ function fetchLicense(license, cb) {
             return cb(tpl);
         });
     });
-    // const cacheRoot = this.cacheRoot();
-    // const sourceRoot = this.sourceRoot();
-
-    // this.remote(
-    //     username, repository, branch,
-    //     (error, remote) => {
-    //         // this.sourceRoot(path.join(cacheRoot, username, repository, branch));
-    //
-    //         const content = this
-    //             .read(['_licenses/', license.toLowerCase(), '.txt'].join(''))
-    //             .replace(/-+[\d\D]*?-+\n\n/, '')
-    //             .replace(/\[year\]/g, new Date().getFullYear())
-    //             .replace(/\[fullname\]/g, this.answers['module:author:fullName']);
-    //
-    //         // this.sourceRoot(sourceRoot);
-    //
-    //         cb(content);
-    //     }
-    // );
 }
 
 module.exports = function (_Base) {
@@ -136,7 +112,7 @@ module.exports = function (_Base) {
     }, {
         key: 'install',
         value: function install() {
-            // this.npmInstall();
+            this.npmInstall();
         }
     }, {
         key: 'end',
