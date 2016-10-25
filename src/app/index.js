@@ -45,6 +45,11 @@ const QUESTIONS = [
             'MPL-2.0',
             'Unlicense'
         ]
+    },
+    {
+        type: 'confirm',
+        name: 'runNPMInstall',
+        message: 'Do you want to run npm install after generated?'
     }
 ];
 
@@ -107,7 +112,9 @@ module.exports = class AppGenerator extends Base {
     }
 
     install() {
-        this.npmInstall();
+        if (this.answers.runNPMInstall) {
+            this.npmInstall();
+        }
     }
 
     end() {
