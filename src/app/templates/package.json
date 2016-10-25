@@ -1,11 +1,11 @@
 {
-  "name": "<%= answers['module:name'] %>",
-  "description": "<%= answers['module:description'] %>",
+  "name": "<%= moduleName %>",
+  "description": "<%= moduleDescription %>",
   "version": "0.1.0",
   "main": "lib/index.js",
-  "author": "<%= answers['module:author:nickname'] %>",
-  "repository": "<%= answers['module:author:nickname'] %>/<%= answers['module:name'] %>",
-  "license": "<%= answers['module:license'] %>",
+  "author": "<%= githubUsername %>",
+  "repository": "<%= githubUsername %>/<%= moduleName %>",
+  "license": "<%= license %>",
   "scripts": {
     "compile": "babel src --out-dir lib",
     "coveralls": "cat ./coverage/lcov.info | coveralls",

@@ -8,7 +8,7 @@ describe('app', () => {
     before(done => {
         test
             .run(path.join(__dirname, '../../src/app'))
-            .withPrompts({'module:license': 'MIT'})
+            .withPrompts({license: 'MIT'})
             .on('end', done);
     });
 

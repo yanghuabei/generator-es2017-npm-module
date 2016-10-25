@@ -7,27 +7,27 @@ import yosay from 'yosay';
 const QUESTIONS = [
     {
         type: 'input',
-        name: 'module:name',
+        name: 'moduleName',
         message: 'Module name'
     },
     {
         type: 'input',
-        name: 'module:description',
+        name: 'moduleDescription',
         message: 'Module description'
     },
     {
         type: 'input',
-        name: 'module:author:nickname',
+        name: 'githubUsername',
         message: 'Your GitHub username'
     },
     {
         type: 'input',
-        name: 'module:author:fullName',
+        name: 'fullName',
         message: 'Your full name'
     },
     {
         'type': 'list',
-        'name': 'module:license',
+        'name': 'license',
         'message': 'Choose a license',
         'default': 'MIT',
         'choices': [
@@ -84,23 +84,23 @@ module.exports = class AppGenerator extends Base {
     writing() {
         this.directory('src', 'src');
         this.directory('test', 'test');
-        this.copy('babelrc', '.babelrc');
-        this.copy('editorconfig', '.editorconfig');
-        this.copy('gitignore', '.gitignore');
-        this.copy('npmignore', '.npmignore');
-        this.copy('package.json', 'package.json');
-        this.copy('README.md', 'README.md');
-        this.copy('travis.yml', '.travis.yml');
+        this.fs.copy(this.templatePath('babelrc'), this.destinationPath('.babelrc'));
+        this.fs.copy(this.templatePath('editorconfig'), this.destinationPath('.editorconfig'));
+        this.fs.copy(this.templatePath('gitignore'), this.destinationPath('.gitignore'));
+        this.fs.copy(this.templatePath('npmignore'), this.destinationPath('.npmignore'));
+        this.fs.copyTpl(this.templatePath('package.json'), this.destinationPath('package.json'), this.answers);
+        this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), this.answers);
+        this.fs.copy(this.templatePath('travis.yml'), this.destinationPath('.travis.yml'));
 
         let done = this.async();
         this::fetchLicense(
-            this.answers['module:license'],
+            this.answers.license,
             tpl => {
                 let content = tpl
                     .replace(/-+[\d\D]*?-+\n\n/, '')
                     .replace(/\[year\]/g, new Date().getFullYear())
-                    .replace(/\[fullname\]/g, this.answers['module:author:fullName']);
-                this.write('LICENSE', content);
+                    .replace(/\[fullname\]/g, this.answers.fullName);
+                this.fs.write(this.destinationPath('LICENSE'), content);
                 done();
             }
         );
