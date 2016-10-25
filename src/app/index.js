@@ -49,7 +49,8 @@ const QUESTIONS = [
     {
         type: 'confirm',
         name: 'runNPMInstall',
-        message: 'Do you want to run npm install after generated?'
+        message: 'Do you want to run npm install after generated?',
+        default: true
     }
 ];
 

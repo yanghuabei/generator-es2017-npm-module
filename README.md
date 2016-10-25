@@ -57,23 +57,24 @@ When project is generated you will get project with that structure:
 
 ### How to use coveralls service with travis ci?
 
-Active coveralls service for your repository. Then add following code to `.travis.yml`.
+Activate coveralls service for your repository on https://coveralls.io. Then add following code to `.travis.yml`.
 
 ```
 script:
   - npm test
-  - npm run compile
 after_success:
   - npm run coveralls
 ```
 
 I tried to run `npm run coveralls` locally, and got `422` error. It might be a bug of coveralls. So if you want light on coverage icon, use coveralls service with travis ci.
 
+If you do not want to use coveralls service, just delete coveralls relevant script and devDependencies in `package.json`.
+
 ## License
 
 The MIT License (MIT)
 
-Copyright © 2015 Eugene Obrezkov
+Copyright © 2016 YangHuabei
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
