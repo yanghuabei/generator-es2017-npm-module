@@ -70,6 +70,8 @@ I tried to run `npm run coveralls` locally, and got `422` error. It might be a b
 
 If you do not want to use coveralls service, just delete coveralls relevant script and devDependencies in `package.json`.
 
+If you use yarn as package took, replace npm in the script with yarn.
+
 ## License
 
 The MIT License (MIT)

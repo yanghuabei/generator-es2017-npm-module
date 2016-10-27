@@ -47,10 +47,17 @@ const QUESTIONS = [
         ]
     },
     {
-        type: 'confirm',
-        name: 'runNPMInstall',
-        message: 'Do you want to run npm install after generated?',
-        default: true
+        'type': 'list',
+        'name': 'pkgTool',
+        'message': 'Choose package tool you want to use.',
+        'default': 'npm',
+        'choices': ['npm', 'yarn']
+    },
+    {
+        'type': 'confirm',
+        'name': 'shouldInstallDependencies',
+        'message': 'Do you want to install dependencies immediately after module generated?',
+        'default': true
     }
 ];
 
@@ -94,9 +101,14 @@ module.exports = class AppGenerator extends Base {
         this.fs.copy(this.templatePath('editorconfig'), this.destinationPath('.editorconfig'));
         this.fs.copy(this.templatePath('gitignore'), this.destinationPath('.gitignore'));
         this.fs.copy(this.templatePath('npmignore'), this.destinationPath('.npmignore'));
-        this.fs.copyTpl(this.templatePath('package.json'), this.destinationPath('package.json'), this.answers);
         this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), this.answers);
-        this.fs.copy(this.templatePath('travis.yml'), this.destinationPath('.travis.yml'));
+
+        this.fs.copyTpl(
+            this.templatePath(`${this.answers.pkgTool}-package.json`),
+            this.destinationPath('package.json'),
+            this.answers
+        );
+        this.fs.copy(this.templatePath(`${this.answers.pkgTool}-travis.yml`), this.destinationPath('.travis.yml'));
 
         let done = this.async();
         this::fetchLicense(
@@ -113,8 +125,18 @@ module.exports = class AppGenerator extends Base {
     }
 
     install() {
-        if (this.answers.runNPMInstall) {
-            this.npmInstall();
+        if (this.answers.shouldInstallDependencies) {
+            if (this.answers.pkgTool === 'npm') {
+                this.npmInstall();
+            }
+            else if (this.answers.pkgTool === 'yarn') {
+                try {
+                    this.spawnCommandSync('yrn', ['install']);
+                }
+                catch (error) {
+                    this.log('Please ensure you have yarn installed globally.');
+                }
+            }
         }
     }
 
