@@ -26,7 +26,7 @@
     ],
     "scripts": {
         "coveralls": "cat coverage/lcov.info | coveralls",
-        "semantic-release": "semantic-release pre && yarn publish && semantic-release post",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post",
         "test": "babel-node ./node_modules/.bin/isparta cover _mocha",
         "prepublish": "yarn run compile",
         "compile": "rm -rf generators && cp -R src generators && babel src/app/index.js --out-file generators/app/index.js"
