@@ -45,7 +45,7 @@
   "dependencies": {
     "yeoman-generator": "0.24.1",
     "yosay": "1.x",
-    "snyk": "^1.88.0"
+    "snyk": "^1.113.0"
   },
   "devDependencies": {
     "babel-cli": "*",
